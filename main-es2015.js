@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row add-cart-details\" >\n  <div class=\"col-md-8 cart-row\" *ngFor=\"let details of productDetails; let i = index\">\n    <div class=\"row\">\n    <div class=\"col-md-3\">\n      <img src=\"{{ details.img_url }}\" />  \n    </div>\n      <div class=\"col-md-9\">\n      <p>{{ details.name }}</p>\n      <p>{{ details.price}}<span style=\"margin-left:50px;\">{{ details.discount }}%</span>\n        <span><span class=\"plus minus \"\n          (click)=\"changeItem('dec', details)\">-</span>\n            <span style=\"margin-left:20px\">{{ details.qty }}</span>\n          <span class=\"plus\" (click)=\"changeItem('inc', details)\">\n            +\n            </span>\n            </span>\n            <span (click)=\"removeItem(i)\" class=\"remove\">Remove</span>\n      </p>\n    \n    \n  </div>\n  </div>\n  </div>\n\n<div class=\"col-md-3 priceDetailsDiv\" *ngIf=\"productCaculations.totalPayble !== 0\">\n  <p class=\"priceDetails\">Price Details</p>\n  <p>\n    Price :<span class=\"float-right\">{{ productCaculations.totalPrice }}</span>\n  </p>\n  <p>\n    Discount :<span class=\"float-right\">{{ productCaculations.discount }}</span>\n  </p>\n  <p class=\"totalPay\">\n    Total Payable :<span class=\"float-right\">{{ productCaculations.totalPayble }}</span>\n  </p>\n</div>\n"
+module.exports = "<div class=\"row add-cart-details\" >\n  <div class=\"col-md-8 cart-row\" *ngFor=\"let details of productDetails; let i = index\">\n    <div class=\"row\">\n    <div class=\"col-md-3\">\n      <img src=\"{{ details.img_url }}\" />  \n    </div>\n      <div class=\"col-md-9\">\n      <p>{{ details.name }}</p>\n      <p>{{ details.price}}<span style=\"margin-left:50px;\">{{ details.discount }}%</span>\n        <span><span class=\"plus minus \"\n          (click)=\"changeItem('dec', details,i)\">-</span>\n            <span style=\"margin-left:20px\">{{ details.qty }}</span>\n          <span class=\"plus\" (click)=\"changeItem('inc', details,i)\">\n            +\n            </span>\n            </span>\n            <span (click)=\"removeItem(i)\" class=\"remove\">Remove</span>\n      </p>\n    \n    \n  </div>\n  </div>\n  </div>\n\n<div class=\"col-md-3 priceDetailsDiv\" *ngIf=\"productCaculations.totalPayble !== 0\">\n  <p class=\"priceDetails\">Price Details</p>\n  <p>\n    Price :<span class=\"float-right\">{{ productCaculations.totalPrice }}</span>\n  </p>\n  <p>\n    Discount :<span class=\"float-right\">{{ productCaculations.discount }}</span>\n  </p>\n  <p class=\"totalPay\">\n    Total Payable :<span class=\"float-right\">{{ productCaculations.totalPayble }}</span>\n  </p>\n</div>\n"
 
 /***/ }),
 
@@ -129,7 +129,7 @@ module.exports = "<p>sort works!</p>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "img{\r\n    width:200px;\r\n    height:150px;\r\n}\r\n\r\n.add-cart-details  {\r\n    top:60px;\r\n    position: relative;\r\n    margin-bottom:20px;\r\n}\r\n\r\n.cart-row{\r\n    border: 1px solid gray;\r\n    margin-bottom: 20px;\r\n    padding: 10px 0 10px 10px;\r\n    margin-left: 30px;\r\n}\r\n\r\n.plus{    \r\n    margin-left: 20px;\r\n    cursor: pointer;\r\n    border: 1px solid gray;\r\n    padding: 6px 10px 10px 7px;\r\n    border-radius: 50%;\r\n}\r\n\r\n.minus{        \r\n    padding: 6px 12px 10px 12px;    \r\n}\r\n\r\n.remove{\r\n    margin-left:80px;\r\n}\r\n\r\n.priceDetailsDiv{\r\n    border: 1px solid gray;\r\n    margin-left: 20px;\r\n}\r\n\r\n.priceDetails{\r\n    border-bottom:1px solid gray;\r\n    padding:10px;\r\n}\r\n\r\n.totalPay{\r\n    border-top:1px solid gray;\r\n    padding-top:5px;\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRkY2FydGRldGFpbHMvYWRkY2FydGRldGFpbHMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksUUFBUTtJQUNSLGtCQUFrQjtJQUNsQixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxzQkFBc0I7SUFDdEIsbUJBQW1CO0lBQ25CLHlCQUF5QjtJQUN6QixpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsZUFBZTtJQUNmLHNCQUFzQjtJQUN0QiwwQkFBMEI7SUFDMUIsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksMkJBQTJCO0FBQy9COztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksc0JBQXNCO0lBQ3RCLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLDRCQUE0QjtJQUM1QixZQUFZO0FBQ2hCOztBQUVBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7SUFDZixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9hZGRjYXJ0ZGV0YWlscy9hZGRjYXJ0ZGV0YWlscy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW1ne1xyXG4gICAgd2lkdGg6MjAwcHg7XHJcbiAgICBoZWlnaHQ6MTUwcHg7XHJcbn1cclxuXHJcbi5hZGQtY2FydC1kZXRhaWxzICB7XHJcbiAgICB0b3A6NjBweDtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIG1hcmdpbi1ib3R0b206MjBweDtcclxufVxyXG5cclxuLmNhcnQtcm93e1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgZ3JheTtcclxuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbiAgICBwYWRkaW5nOiAxMHB4IDAgMTBweCAxMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDMwcHg7XHJcbn1cclxuXHJcbi5wbHVzeyAgICBcclxuICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgZ3JheTtcclxuICAgIHBhZGRpbmc6IDZweCAxMHB4IDEwcHggN3B4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG59XHJcbiBcclxuLm1pbnVzeyAgICAgICAgXHJcbiAgICBwYWRkaW5nOiA2cHggMTJweCAxMHB4IDEycHg7ICAgIFxyXG59XHJcblxyXG4ucmVtb3Zle1xyXG4gICAgbWFyZ2luLWxlZnQ6ODBweDtcclxufVxyXG5cclxuLnByaWNlRGV0YWlsc0RpdntcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGdyYXk7XHJcbiAgICBtYXJnaW4tbGVmdDogMjBweDtcclxufVxyXG5cclxuLnByaWNlRGV0YWlsc3tcclxuICAgIGJvcmRlci1ib3R0b206MXB4IHNvbGlkIGdyYXk7XHJcbiAgICBwYWRkaW5nOjEwcHg7XHJcbn1cclxuXHJcbi50b3RhbFBheXtcclxuICAgIGJvcmRlci10b3A6MXB4IHNvbGlkIGdyYXk7XHJcbiAgICBwYWRkaW5nLXRvcDo1cHg7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufSJdfQ== */"
+module.exports = "img{\r\n    width:200px;\r\n    height:150px;\r\n}\r\n\r\n.add-cart-details  {\r\n    top:60px;\r\n    position: relative;\r\n    margin-bottom:20px;\r\n}\r\n\r\n.cart-row{\r\n    border: 1px solid gray;\r\n    margin-bottom: 20px;\r\n    padding: 10px 0 10px 10px;\r\n    margin-left: 30px;\r\n}\r\n\r\n.plus{    \r\n    margin-left: 20px;\r\n    cursor: pointer;\r\n    border: 1px solid gray;\r\n    padding: 6px 10px 10px 7px;\r\n    border-radius: 50%;\r\n}\r\n\r\n.minus{        \r\n    padding: 6px 12px 10px 12px;    \r\n}\r\n\r\n.remove{\r\n    margin-left:80px;\r\n}\r\n\r\n.priceDetailsDiv{\r\n    border: 1px solid gray;\r\n    margin-left: 20px;\r\n}\r\n\r\n.priceDetails{\r\n    border-bottom:1px solid gray;\r\n    padding:10px;\r\n}\r\n\r\n.totalPay{\r\n    border-top:1px solid gray;\r\n    padding-top:5px;\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkZGNhcnRkZXRhaWxzL2FkZGNhcnRkZXRhaWxzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFFBQVE7SUFDUixrQkFBa0I7SUFDbEIsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksc0JBQXNCO0lBQ3RCLG1CQUFtQjtJQUNuQix5QkFBeUI7SUFDekIsaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLGVBQWU7SUFDZixzQkFBc0I7SUFDdEIsMEJBQTBCO0lBQzFCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLDJCQUEyQjtBQUMvQjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLHNCQUFzQjtJQUN0QixpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSw0QkFBNEI7SUFDNUIsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0lBQ2YsaUJBQWlCO0FBQ3JCIiwiZmlsZSI6ImFkZGNhcnRkZXRhaWxzL2FkZGNhcnRkZXRhaWxzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpbWd7XHJcbiAgICB3aWR0aDoyMDBweDtcclxuICAgIGhlaWdodDoxNTBweDtcclxufVxyXG5cclxuLmFkZC1jYXJ0LWRldGFpbHMgIHtcclxuICAgIHRvcDo2MHB4O1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgbWFyZ2luLWJvdHRvbToyMHB4O1xyXG59XHJcblxyXG4uY2FydC1yb3d7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBncmF5O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxuICAgIHBhZGRpbmc6IDEwcHggMCAxMHB4IDEwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMzBweDtcclxufVxyXG5cclxuLnBsdXN7ICAgIFxyXG4gICAgbWFyZ2luLWxlZnQ6IDIwcHg7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBncmF5O1xyXG4gICAgcGFkZGluZzogNnB4IDEwcHggMTBweCA3cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbn1cclxuIFxyXG4ubWludXN7ICAgICAgICBcclxuICAgIHBhZGRpbmc6IDZweCAxMnB4IDEwcHggMTJweDsgICAgXHJcbn1cclxuXHJcbi5yZW1vdmV7XHJcbiAgICBtYXJnaW4tbGVmdDo4MHB4O1xyXG59XHJcblxyXG4ucHJpY2VEZXRhaWxzRGl2e1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgZ3JheTtcclxuICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG59XHJcblxyXG4ucHJpY2VEZXRhaWxze1xyXG4gICAgYm9yZGVyLWJvdHRvbToxcHggc29saWQgZ3JheTtcclxuICAgIHBhZGRpbmc6MTBweDtcclxufVxyXG5cclxuLnRvdGFsUGF5e1xyXG4gICAgYm9yZGVyLXRvcDoxcHggc29saWQgZ3JheTtcclxuICAgIHBhZGRpbmctdG9wOjVweDtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -167,10 +167,17 @@ let AddcartdetailsComponent = class AddcartdetailsComponent {
         console.log(this.productDetails);
         this.calculate(this.productDetails);
     }
-    changeItem(val, obj) {
+    changeItem(val, obj, i) {
         if (val == "dec") {
             obj.qty--;
             this.calculate(this.productDetails);
+            if (obj.qty == 0) {
+                this.productDetails.splice(i, 1);
+                this.shoppingservice.removeItemfromCart(i);
+                if (this.productDetails.length == 0) {
+                    this.router.navigate(['/']);
+                }
+            }
         }
         else {
             obj.qty++;
@@ -181,9 +188,6 @@ let AddcartdetailsComponent = class AddcartdetailsComponent {
         this.productDetails.splice(i, 1);
         this.shoppingservice.addProductsToCart(this.productDetails);
         this.calculate(this.productDetails);
-        if (this.productDetails.length == 0) {
-            this.router.navigate(["/"]);
-        }
     }
     calculate(productDetails) {
         this.productCaculations = {
@@ -193,13 +197,16 @@ let AddcartdetailsComponent = class AddcartdetailsComponent {
         };
         productDetails.map(product => {
             let priceAmount = product.price * product.qty;
-            let discount = product.discount * product.qty;
+            let discount = (product.discount * product.qty) * priceAmount / 100;
             this.productCaculations.totalPrice += priceAmount;
             this.productCaculations.discount += discount;
         });
         this.productCaculations.totalPayble =
             this.productCaculations.totalPrice - this.productCaculations.discount;
         console.log(this.productCaculations);
+        if (this.productDetails.length == 0) {
+            this.router.navigate(["/"]);
+        }
     }
 };
 AddcartdetailsComponent.ctorParameters = () => [
@@ -262,7 +269,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "app-header  {\r\n    position: fixed;\r\n    width:100%;\r\n    z-index: 2;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxlQUFlO0lBQ2YsVUFBVTtJQUNWLFVBQVU7QUFDZCIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYXBwLWhlYWRlciAge1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIHotaW5kZXg6IDI7XHJcbn1cclxuXHJcbiJdfQ== */"
+module.exports = "app-header  {\r\n    position: fixed;\r\n    width:100%;\r\n    z-index: 2;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLFVBQVU7SUFDVixVQUFVO0FBQ2QiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhcHAtaGVhZGVyICB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgei1pbmRleDogMjtcclxufVxyXG5cclxuIl19 */"
 
 /***/ }),
 
@@ -377,7 +384,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NhcnRpY29uL2NhcnRpY29uLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjYXJ0aWNvbi9jYXJ0aWNvbi5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -419,7 +426,7 @@ CarticonComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2ZpbHRlci9maWx0ZXIuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmaWx0ZXIvZmlsdGVyLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -461,7 +468,7 @@ FilterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJoZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -493,6 +500,10 @@ let HeaderComponent = class HeaderComponent {
         this.shoppingservice.productSendDetails.subscribe(products => {
             console.log(products);
             this.allProducts = products;
+        });
+        this.shoppingservice.removeItem.subscribe(id => {
+            console.log(id);
+            this.allProducts.splice(id, 1);
         });
     }
     itemsInSearch() {
@@ -526,7 +537,7 @@ HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "img{\r\n    height:175px;    \r\n    width:160px;    \r\n}\r\n\r\n.color-green{\r\n    color:green;\r\n    font-weight: 600;\r\n}\r\n\r\n.p-btn{\r\n    margin-top: 10px;\r\n    background: yellow;\r\n    color: black;\r\n    font-weight: 600;\r\n    border: 1px solid yellow;\r\n    border-radius: 20px;\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaXRlbS9pdGVtLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osV0FBVztBQUNmOztBQUVBO0lBQ0ksV0FBVztJQUNYLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLGdCQUFnQjtJQUNoQix3QkFBd0I7SUFDeEIsbUJBQW1COztBQUV2QiIsImZpbGUiOiJzcmMvYXBwL2l0ZW0vaXRlbS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW1ne1xyXG4gICAgaGVpZ2h0OjE3NXB4OyAgICBcclxuICAgIHdpZHRoOjE2MHB4OyAgICBcclxufVxyXG5cclxuLmNvbG9yLWdyZWVue1xyXG4gICAgY29sb3I6Z3JlZW47XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG4ucC1idG57XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgYmFja2dyb3VuZDogeWVsbG93O1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIHllbGxvdztcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcblxyXG59XHJcbiJdfQ== */"
+module.exports = "img{\r\n    height:175px;    \r\n    width:160px;    \r\n}\r\n\r\n.color-green{\r\n    color:green;\r\n    font-weight: 600;\r\n}\r\n\r\n.p-btn{\r\n    margin-top: 10px;\r\n    background: yellow;\r\n    color: black;\r\n    font-weight: 600;\r\n    border: 1px solid yellow;\r\n    border-radius: 20px;\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIml0ZW0vaXRlbS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLFdBQVc7QUFDZjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixnQkFBZ0I7SUFDaEIsd0JBQXdCO0lBQ3hCLG1CQUFtQjs7QUFFdkIiLCJmaWxlIjoiaXRlbS9pdGVtLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpbWd7XHJcbiAgICBoZWlnaHQ6MTc1cHg7ICAgIFxyXG4gICAgd2lkdGg6MTYwcHg7ICAgIFxyXG59XHJcblxyXG4uY29sb3ItZ3JlZW57XHJcbiAgICBjb2xvcjpncmVlbjtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuXHJcbi5wLWJ0bntcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICBiYWNrZ3JvdW5kOiB5ZWxsb3c7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgeWVsbG93O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuXHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -584,7 +595,7 @@ ItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlYXJjaC9zZWFyY2guY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzZWFyY2gvc2VhcmNoLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -642,6 +653,7 @@ let ShoppingcartService = class ShoppingcartService {
         this.http = http;
         this.productSendDetails = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.itemSearch = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        this.removeItem = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
     getProducts() {
         return this.http.get("https://api.myjson.com/bins/qzuzi");
@@ -651,6 +663,9 @@ let ShoppingcartService = class ShoppingcartService {
     }
     searchDetails(event) {
         this.itemSearch.next(event);
+    }
+    removeItemfromCart(id) {
+        this.removeItem.next(id);
     }
 };
 ShoppingcartService.ctorParameters = () => [
@@ -673,7 +688,7 @@ ShoppingcartService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".col-md-2{\r\n    margin-bottom:20px\r\n}\r\n\r\n.container{\r\n    position: relative;\r\n    top: 60px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hvcHBpbmdsaXN0L3Nob3BwaW5nbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0k7QUFDSjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixTQUFTO0FBQ2IiLCJmaWxlIjoic3JjL2FwcC9zaG9wcGluZ2xpc3Qvc2hvcHBpbmdsaXN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29sLW1kLTJ7XHJcbiAgICBtYXJnaW4tYm90dG9tOjIwcHhcclxufVxyXG5cclxuLmNvbnRhaW5lcntcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIHRvcDogNjBweDtcclxufSJdfQ== */"
+module.exports = ".col-md-2{\r\n    margin-bottom:20px\r\n}\r\n\r\n.container{\r\n    position: relative;\r\n    top: 60px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNob3BwaW5nbGlzdC9zaG9wcGluZ2xpc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJO0FBQ0o7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsU0FBUztBQUNiIiwiZmlsZSI6InNob3BwaW5nbGlzdC9zaG9wcGluZ2xpc3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb2wtbWQtMntcclxuICAgIG1hcmdpbi1ib3R0b206MjBweFxyXG59XHJcblxyXG4uY29udGFpbmVye1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgdG9wOiA2MHB4O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -734,7 +749,6 @@ let ShoppinglistComponent = class ShoppinglistComponent {
                 this.allProducts.push(product);
             }
         }
-        console.log(this.allProducts);
         this.shoppingcartService.addProductsToCart(this.allProducts);
     }
 };
@@ -760,7 +774,7 @@ ShoppinglistComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NvcnQvc29ydC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzb3J0L3NvcnQuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
